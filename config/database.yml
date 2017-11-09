@@ -9,7 +9,7 @@ default: &default
   charset: utf8mb4
   collation: utf8mb4_bin
   encoding: utf8mb4
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: <%= Rails.application.secrets.database[:pool] %>
   timeout: 5000
   host: <%= Rails.application.secrets.database[:host] %>
   database: <%= Rails.application.secrets.database[:name] %>
